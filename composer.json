@@ -86,11 +86,6 @@
             "block-insecure": false
         }
     },
-    "audit": {
-        "ignore": [
-            "PKSA-5bdf-2x61-v43c"
-        ]
-    },
     "minimum-stability": "stable",
     "prefer-stable": true
 }
