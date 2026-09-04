@@ -12,7 +12,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/give-review', function () {
+    return view('review-page');
+});
 
 Route::get('/portfolios', [PortfoliosController::class, 'index']);
 Route::post('/portfolios', [PortfoliosController::class, 'store']);

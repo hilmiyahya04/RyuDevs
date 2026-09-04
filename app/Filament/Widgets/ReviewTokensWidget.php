@@ -31,7 +31,7 @@ class ReviewTokensWidget extends BaseWidget
                     ->dateTime()
                     ->label('Dibuat'),
             ])
-            ->recordActions([
+            ->actions([
                 DeleteAction::make(),
             ])
             ->paginated([5, 10]);

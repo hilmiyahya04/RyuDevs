@@ -9,11 +9,8 @@ import Marquee from './Marquee';
 import { SmokeEffect } from './SmokeEffect';
 import { Footer } from './Footer';
 import Review from './Review';
-import ReviewForm from './ReviewForm';
 
-// Buka SALAH SATU baris di bawah ini sesuai isi file Contact.tsx Anda:
-import Contact from './Contact'; // Gunakan ini JIKA Contact.tsx pakai 'export default'
-// import { Contact } from './Contact'; // Gunakan ini JIKA Contact.tsx pakai 'export const Contact'
+import Contact from './Contact';
 
 const VIDEO_URL = "https://res.cloudinary.com/borp1tfy/video/upload/v1787741611/kling_20260826_Image_to_Video__2142_0.mp4";
 
@@ -37,7 +34,6 @@ function App() {
             <Team />
             <Contact />
             <Review />
-            <ReviewForm />
             <Footer />
         </div>
     );
