@@ -2,13 +2,13 @@
 
 namespace App\Filament\Resources\Reviews\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
+use App\Models\Reviews;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\BooleanColumn;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Table;
 
 class ReviewsTable
 {
@@ -17,37 +17,38 @@ class ReviewsTable
         return $table
             ->columns([
                 TextColumn::make('customer_name')
-                    ->sortable()
                     ->searchable(),
-
-                TextColumn::make('position')
-                    ->sortable()
-                    ->searchable(),
-
+                TextColumn::make('position'),
+                TextColumn::make('email'),
                 TextColumn::make('review')
-                    ->sortable()
-                    ->searchable(),
-
-                TextColumn::make('token')
-                    ->sortable()
-                    ->searchable(),
-
+                    ->limit(50),
+                BadgeColumn::make('status')
+                    ->colors([
+                        'warning' => 'pending',
+                        'success' => 'approved',
+                    ]),
                 TextColumn::make('created_at')
-                    ->dateTime('M d, Y')
-                    ->sortable(),
+                    ->dateTime()
+                    ->label('Dikirim'),
             ])
             ->filters([
-                //
-            ])
-            ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
+                SelectFilter::make('status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'approved' => 'Approved',
+                    ]),
             ])
             ->actionsColumnLabel('Aksi')
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+            ->recordActions([
+                \Filament\Actions\Action::make('approve')
+                    ->label('Approve')
+                    ->icon('heroicon-o-check')
+                    ->color('success')
+                    ->visible(fn (Reviews $record) => $record->status === 'pending')
+                    ->action(fn (Reviews $record) => $record->update(['status' => 'approved']))
+                    ->requiresConfirmation(),
+                EditAction::make(),
+                DeleteAction::make(),
             ]);
     }
 }

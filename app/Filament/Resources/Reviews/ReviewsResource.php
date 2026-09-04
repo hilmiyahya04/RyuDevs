@@ -7,12 +7,11 @@ use App\Filament\Resources\Reviews\Pages\EditReviews;
 use App\Filament\Resources\Reviews\Pages\ListReviews;
 use App\Filament\Resources\Reviews\Schemas\ReviewsForm;
 use App\Filament\Resources\Reviews\Tables\ReviewsTable;
+use App\Models\Reviews;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use App\Models\Reviews;
 
 class ReviewsResource extends Resource
 {
@@ -20,7 +19,9 @@ class ReviewsResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 5;
+
+    protected static ?string $recordTitleAttribute = 'Reviews';
 
     public static function form(Schema $schema): Schema
     {
@@ -35,7 +36,7 @@ class ReviewsResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            //a
         ];
     }
 

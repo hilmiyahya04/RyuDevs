@@ -9,6 +9,7 @@ import Marquee from './Marquee';
 import { SmokeEffect } from './SmokeEffect';
 import { Footer } from './Footer';
 import Review from './Review';
+import ReviewForm from './ReviewForm';
 
 // Buka SALAH SATU baris di bawah ini sesuai isi file Contact.tsx Anda:
 import Contact from './Contact'; // Gunakan ini JIKA Contact.tsx pakai 'export default'
@@ -36,6 +37,7 @@ function App() {
             <Team />
             <Contact />
             <Review />
+            <ReviewForm />
             <Footer />
         </div>
     );

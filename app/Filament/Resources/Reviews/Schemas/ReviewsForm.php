@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\Reviews\Schemas;
 
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
-use App\Models\Contacs;
 
 class ReviewsForm
 {
@@ -13,21 +13,20 @@ class ReviewsForm
     {
         return $schema
             ->components([
-                Select::make('customer_name')
-                    ->options(
-                        Contacs::query()
-                            ->pluck('name', 'name')
-                    )
-                    ->searchable()
-                    ->required(),
-
+                TextInput::make('customer_name')
+                    ->required()
+                    ->disabled(),
                 TextInput::make('position')
-                    ->required(),
-
-                TextInput::make('review')
-                    ->required(),
-
-                TextInput::make('token')
+                    ->disabled(),
+                TextInput::make('email')
+                    ->disabled(),
+                Textarea::make('review')
+                    ->disabled(),
+                Select::make('status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'approved' => 'Approved',
+                    ])
                     ->required(),
             ]);
     }
