@@ -26,7 +26,7 @@ export function Hero() {
                     <div className="w-[1px] h-6 bg-white/20" />
                     <div className="flex flex-col">
                         <span className="text-[11px] font-semibold tracking-[0.14em] text-neutral-200 uppercase leading-none mb-1">
-                            Future Innovation
+                            Future Innovation coba
                         </span>
                         <span className="text-[11px] font-semibold tracking-[0.14em] text-neutral-400 uppercase leading-none">
                             Technologyyy
