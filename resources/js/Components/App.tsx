@@ -12,7 +12,7 @@ import Review from './Review';
 
 import Contact from './Contact';
 
-const VIDEO_URL = "https://res.cloudinary.com/borp1tfy/video/upload/v1787741611/kling_20260826_Image_to_Video__2142_0.mp4";
+const VIDEO_URL = "/resource/bg_video.mp4";
 
 function App() {
     useEffect(() => {

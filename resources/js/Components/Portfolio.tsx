@@ -50,7 +50,7 @@ export function Portfolio() {
     }, []);
 
     return (
-        <section id="portfolio" className="w-full max-w-7xl mx-auto px-6 sm:px-8 py-20 relative z-10">
+        <section id="portfolio" className="w-full max-w-7xl mx-auto px-6 sm:px-8 py-20 relative">
             <div className="mb-12">
                 <p className="text-neutral-400 text-3xl max-w-4xl mx-auto text-center">
                     Our Portfolio
@@ -80,7 +80,7 @@ export function Portfolio() {
                     {projects.map((project) => (
                         <div
                             key={project.id}
-                            className="group relative rounded-2xl bg-neutral-900/50 border border-white/10 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-indigo-500/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] flex flex-col"
+                            className="group relative rounded-2xl liquid-glass-card overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-[0_0_35px_rgba(249,115,22,0.18)] flex flex-col"
                         >
                             {/* Image Container dengan Zoom Effect */}
                             <div className="relative aspect-video w-full overflow-hidden bg-neutral-800">

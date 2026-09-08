@@ -1,9 +1,6 @@
-
-
-
 // src/components/ReviewForm.tsx
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface ReviewFormData {
     customer_name: string;
@@ -15,17 +12,20 @@ interface ReviewFormData {
 
 export default function ReviewForm(): React.ReactElement {
     const [formData, setFormData] = useState<ReviewFormData>({
-        customer_name: '',
-        position: '',
-        review: '',
-        email: '',
-        token: '',
+        customer_name: "",
+        position: "",
+        review: "",
+        email: "",
+        token: "",
     });
     const [loading, setLoading] = useState<boolean>(false);
-    const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+    const [message, setMessage] = useState<{
+        type: "success" | "error";
+        text: string;
+    } | null>(null);
 
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -37,10 +37,10 @@ export default function ReviewForm(): React.ReactElement {
 
         try {
             const res = await fetch(`${import.meta.env.VITE_API_URL}/review`, {
-                method: 'POST',
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json',
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
                 },
                 body: JSON.stringify(formData),
             });
@@ -48,21 +48,33 @@ export default function ReviewForm(): React.ReactElement {
             const data = await res.json();
 
             if (!res.ok) {
-                setMessage({ type: 'error', text: data.message || 'Terjadi kesalahan.' });
+                setMessage({
+                    type: "error",
+                    text: data.message || "Terjadi kesalahan.",
+                });
                 return;
             }
 
-            setMessage({ type: 'success', text: data.message });
-            setFormData({ customer_name: '', position: '', review: '', email: '', token: '' });
+            setMessage({ type: "success", text: data.message });
+            setFormData({
+                customer_name: "",
+                position: "",
+                review: "",
+                email: "",
+                token: "",
+            });
         } catch (err) {
-            setMessage({ type: 'error', text: 'Gagal menghubungi server.' });
+            setMessage({ type: "error", text: "Gagal menghubungi server." });
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <section id="review-form" className="relative z-20 py-16 px-4 max-w-2xl mx-auto w-full">
+        <section
+            id="review-form"
+            className="relative py-16 px-4 max-w-2xl mx-auto w-full"
+        >
             <div className="mb-12">
                 <p className="text-neutral-400 text-3xl max-w-4xl mx-auto text-center">
                     Give a Review
@@ -77,10 +89,11 @@ export default function ReviewForm(): React.ReactElement {
             <div className="group relative rounded-2xl bg-neutral-900/50 border border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-indigo-500/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] flex flex-col justify-between">
                 {message && (
                     <div
-                        className={`mb-4 p-3 rounded text-sm ${message.type === 'success'
-                            ? 'bg-green-500/20 text-green-400'
-                            : 'bg-red-500/20 text-red-400'
-                            }`}
+                        className={`mb-4 p-3 rounded text-sm ${
+                            message.type === "success"
+                                ? "bg-green-500/20 text-green-400"
+                                : "bg-red-500/20 text-red-400"
+                        }`}
                     >
                         {message.text}
                     </div>
@@ -137,7 +150,7 @@ export default function ReviewForm(): React.ReactElement {
                         disabled={loading}
                         className="w-full py-3 rounded bg-orange-500 hover:bg-orange-600 transition-colors font-semibold text-white disabled:opacity-50"
                     >
-                        {loading ? 'Mengirim...' : 'Kirim Review'}
+                        {loading ? "Mengirim..." : "Kirim Review"}
                     </button>
                 </form>
             </div>

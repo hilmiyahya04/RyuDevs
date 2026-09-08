@@ -69,7 +69,7 @@ export const Contact: React.FC = () => {
     };
 
     return (
-        <section id="contact" className="relative z-10 py-16 px-4 max-w-5xl mx-auto w-full">
+        <section id="contact" className="relative py-16 px-4 max-w-5xl mx-auto w-full">
             <div className="mb-12">
                 <p className="text-neutral-400 text-3xl max-w-4xl mx-auto text-center">
                     Our Contact
@@ -81,7 +81,7 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="group relative rounded-2xl bg-neutral-900/50 border border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-indigo-500/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] flex flex-col justify-between">
+                <div className="group relative rounded-2xl liquid-glass-card p-8 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] flex flex-col justify-between">
                     <div>
                         <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">
                             Get In <span className="text-orange-500">Touch.</span>
@@ -127,7 +127,7 @@ export const Contact: React.FC = () => {
 
                 <form
                     onSubmit={handleSubmit}
-                    className="group relative rounded-2xl bg-neutral-900/50 border border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-indigo-500/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] space-y-6"
+                    className="group relative rounded-2xl liquid-glass-card p-8 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] space-y-6"
                 >
                     <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">

@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 
 export function Hero() {
     return (
-        <main id='hero' className="w-full max-w-7xl mx-auto px-6 sm:px-8 pt-8 md:pt-14 pb-16 flex flex-col justify-between min-h-[calc(100vh-100px)] relative mt-20">
+        <main id='hero' className="w-full max-w-7xl mx-auto px-6 sm:px-8 pt-8 md:pt-14 pb-16 flex flex-col justify-center min-h-[calc(100vh-100px)] relative mt-20">
             {/* Background ambient lighting */}
             <div className="absolute top-1/4 -left-32 w-96 h-96 bg-orange-600/10 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-10 left-10 w-80 h-80 bg-red-600/10 rounded-full blur-[100px] pointer-events-none" />

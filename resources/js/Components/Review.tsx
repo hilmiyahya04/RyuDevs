@@ -25,7 +25,7 @@ export default function Review(): React.ReactElement {
 
     if (loading) {
         return (
-            <section id="review" className="relative z-20 p-10 text-white text-center my-10">
+            <section id="review" className="relative  p-10 text-white text-center my-10">
                 <p className="text-neutral-400">Memuat review...</p>
             </section>
         );
@@ -33,7 +33,7 @@ export default function Review(): React.ReactElement {
 
     if (reviews.length === 0) {
         return (
-            <section id="review" className="relative z-20 p-10 text-white text-center my-10">
+            <section id="review" className="relative  p-10 text-white text-center my-10">
                 <p className="text-neutral-400">Belum ada review.</p>
             </section>
         );
@@ -43,7 +43,7 @@ export default function Review(): React.ReactElement {
     const marqueeItems = [...reviews, ...reviews];
 
     return (
-        <section id="review" className="relative z-20 p-10 text-white text-center my-10">
+        <section id="review" className="relative  p-10 text-white text-center my-10">
             {/* Custom Keyframes untuk Tailwind CSS via tag <style> standar TSX */}
             <style>{`
         @keyframes marqueeRight {
@@ -72,7 +72,7 @@ export default function Review(): React.ReactElement {
                     {marqueeItems.map((item, index) => (
                         <div
                             key={`${item.id}-${index}`}
-                            className="w-[350px] shrink-0 group relative rounded-2xl bg-neutral-900/50 border border-white/10 p-8 transition-all duration-500 hover:border-indigo-500/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] flex flex-col justify-between text-left"
+                            className="w-[350px] shrink-0 group relative rounded-2xl liquid-glass-card p-8 transition-all duration-500 hover:border-orange-500/40 hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] flex flex-col justify-between text-left"
                         >
                             <div>
                                 <h3 className="text-2xl font-bold tracking-tight text-white mb-1">
