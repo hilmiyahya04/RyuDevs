@@ -9,11 +9,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @viteReactRefresh
-    @vite(['resources/css/app.css', 'resources/js/Components/ReviewPage.tsx'])
+    @vite(['resources/css/app.css', 'resources/js/Components/Revieww.tsx'])
 </head>
 <body class="bg-gray-100 antialiased">
 
-    <div id="review-app"></div>
+    <div id="revieww-app"></div>
 
 </body>
 </html>
