@@ -29,7 +29,7 @@ export function Hero() {
                             Future Innovation coba
                         </span>
                         <span className="text-[11px] font-semibold tracking-[0.14em] text-neutral-400 uppercase leading-none">
-                            Technologyyy
+                            Technology
                         </span>
                     </div>
                 </motion.div>
@@ -41,8 +41,8 @@ export function Hero() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className="text-5xl sm:text-7xl md:text-8xl lg:text-[90px] font-light tracking-tight text-white leading-[1.02] sm:leading-[0.98] select-none"
                 >
-                    <span className="block font-bold">Technologyyy</span>
-                    <span className="block font-bold">Crafted for All Coba</span>
+                    <span className="block font-bold">Technology</span>
+                    <span className="block font-bold">Crafted for All</span>
                     <span className="block font-bold">
                         Not <span className="font-serif-custom italic font-normal tracking-normal bg-gradient-to-r from-[#ff4b14] via-[#ff6826] to-[#f77e38] bg-clip-text text-transparent pr-2">Machines</span>
                     </span>
