@@ -49,11 +49,13 @@ export default function Navbar() {
             initial={{ y: 0 }}
             animate={{ y: isVisible ? 0 : -120 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl px-6 sm:px-8 py-4 flex items-center justify-between z-50"
+            className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl px-6 sm:px-8 py-4 flex items-center gap-80 z-50"
         >
             <a href="#hero" className="flex items-center gap-3 group">
                 <FluxoraLogoIcon className="w-12 h-12 transition-transform group-hover:scale-105 duration-200" />
-                <span className="text-white text-2xl font-bold tracking-tight">RyuDevs</span>
+                <h3 className="text-2xl font-bold text-white">
+                    Ryu<span className="text-orange-500">Devs</span>
+                </h3>
             </a>
 
             {/* Center Nav Capsule - Desktop */}
@@ -112,9 +114,6 @@ export default function Navbar() {
                     </div>
                 ))}
             </nav>
-
-            {/* Bagian Tombol Admin (Memanggil Komponen Terpisah) */}
-            <AdminAuthButton />
 
             {/* Mobile Hamburger Toggle */}
             <div className="flex md:hidden items-center gap-3">

@@ -59,7 +59,7 @@ export function Team() {
                     Our Team
                 </p>
                 <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-4 text-center">
-                    What The <span className="text-orange-500">Duo.</span>
+                    Ryu <span className="text-orange-500">Developers</span>
                 </h2>
                 <div className="border-b-4 border-white pb-4 w-44 rounded mx-auto" />
             </div>

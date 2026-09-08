@@ -29,26 +29,4 @@ export default function AdminAuthButton() {
         localStorage.removeItem("adminToken");
         setIsAdminLoggedIn(false);
     };
-
-    return (
-        <div className="hidden md:flex items-center">
-            {isAdminLoggedIn ? (
-                <a
-                    href="/admin"
-                    onClick={handleLogoutClick}
-                    className="bg-black text-white font-semibold text-[14px] px-5 py-2.5 rounded-full hover:bg-neutral-800 active:scale-95 transition-all shadow-md cursor-pointer inline-block text-center"
-                >
-                    Dashboard Admin
-                </a>
-            ) : (
-                <a
-                    href="/admin/login"
-                    onClick={handleLoginClick}
-                    className="bg-white text-black font-semibold text-[14px] px-5 py-2.5 rounded-full hover:bg-neutral-200 active:scale-95 transition-all shadow-md cursor-pointer inline-block text-center"
-                >
-                    Login
-                </a>
-            )}
-        </div>
-    );
 }
