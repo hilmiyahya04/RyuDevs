@@ -29,7 +29,7 @@ export function Hero() {
                             Future Innovation
                         </span>
                         <span className="text-[11px] font-semibold tracking-[0.14em] text-neutral-400 uppercase leading-none">
-                            Technology
+                            Technologyyy
                         </span>
                     </div>
                 </motion.div>
