@@ -36,3 +36,63 @@
 .animate-marquee-reverse {
     animation: marquee-reverse 15s linear infinite;
 }
+
+/* ==========================================================================
+   Liquid Glass Effects (VisionOS-inspired multi-layer refraction & rim lighting)
+   ========================================================================== */
+
+.liquid-glass-pill {
+    background: rgba(16, 16, 20, 0.45);
+    backdrop-filter: blur(24px) saturate(190%) contrast(105%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%) contrast(105%);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow:
+        inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.35),
+        inset 0 0 24px 0 rgba(255, 255, 255, 0.03),
+        inset 0 -1px 2px 0 rgba(0, 0, 0, 0.45),
+        0 20px 45px -10px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-pill:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow:
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.45),
+        inset 0 0 28px 0 rgba(255, 255, 255, 0.05),
+        inset 0 -1px 2px 0 rgba(0, 0, 0, 0.5),
+        0 25px 50px -10px rgba(0, 0, 0, 0.7);
+}
+
+.liquid-glass-dropdown {
+    background: rgba(14, 14, 18, 0.65);
+    backdrop-filter: blur(28px) saturate(200%) contrast(105%);
+    -webkit-backdrop-filter: blur(28px) saturate(200%) contrast(105%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.25),
+        inset 0 0 20px 0 rgba(255, 255, 255, 0.02),
+        0 25px 60px -15px rgba(0, 0, 0, 0.8);
+}
+
+.liquid-glass-card {
+    background: rgba(15, 15, 19, 0.45);
+    backdrop-filter: blur(20px) saturate(180%) contrast(100%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%) contrast(100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.22),
+        inset 0 0 16px 0 rgba(255, 255, 255, 0.02),
+        inset 0 -1px 2px 0 rgba(0, 0, 0, 0.3),
+        0 18px 40px -10px rgba(0, 0, 0, 0.55);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-card:hover {
+    background: rgba(22, 22, 28, 0.55);
+    border-color: rgba(255, 255, 255, 0.24);
+    box-shadow:
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.4),
+        inset 0 0 24px 0 rgba(249, 115, 22, 0.08),
+        inset 0 -1px 2px 0 rgba(0, 0, 0, 0.4),
+        0 25px 50px -10px rgba(0, 0, 0, 0.75);
+}
