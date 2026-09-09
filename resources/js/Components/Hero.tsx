@@ -42,7 +42,7 @@ export function Hero() {
                     className="text-5xl sm:text-7xl md:text-8xl lg:text-[90px] font-light tracking-tight text-white leading-[1.02] sm:leading-[0.98] select-none"
                 >
                     <span className="block font-bold">Technology</span>
-                    <span className="block font-bold">Crafted for All</span>
+                    <span className="block font-bold">Crafted for AllL</span>
                     <span className="block font-bold">
                         Not <span className="font-serif-custom italic font-normal tracking-normal bg-gradient-to-r from-[#ff4b14] via-[#ff6826] to-[#f77e38] bg-clip-text text-transparent pr-2">Machines</span>
                     </span>
