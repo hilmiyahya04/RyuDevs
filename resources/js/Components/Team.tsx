@@ -21,7 +21,8 @@ interface ApiResponse {
     data: TeamMember[];
 }
 
-const API_BASE_URL = "http://localhost:8000";
+// DIPERBAIKI: Hapus 'http://localhost:8000' agar menggunakan relative path (HTTPS)
+const API_BASE_URL = "";
 
 export function Team() {
     const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
@@ -37,7 +38,7 @@ export function Team() {
 
                 if (!response.ok) {
                     throw new Error(
-                        `Gagal mengambil data: ${response.statusText}`,
+                        `Gagal mengambil data: ${response.statusText}`
                     );
                 }
 
@@ -45,7 +46,7 @@ export function Team() {
                 setTeamMembers(result.data);
             } catch (err) {
                 setError(
-                    err instanceof Error ? err.message : "Terjadi kesalahan",
+                    err instanceof Error ? err.message : "Terjadi kesalahan"
                 );
             } finally {
                 setLoading(false);
@@ -96,8 +97,9 @@ export function Team() {
                             {/* Photo Section */}
                             <div className="relative w-2/5 shrink-0 overflow-hidden">
                                 {member.photo && (
+                                    /* DIPERBAIKI: Menggunakan path /storage/ tanpa host localhost */
                                     <img
-                                        src={`${API_BASE_URL}/storage/${member.photo}`}
+                                        src={`/storage/${member.photo}`}
                                         alt={member.name}
                                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                                     />
