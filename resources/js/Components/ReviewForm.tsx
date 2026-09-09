@@ -82,18 +82,17 @@ export default function ReviewForm(): React.ReactElement {
                 <h2 className="text-4xl sm:text-6xl font-bold text-white mb-4 text-center">
                     Give a <span className="text-orange-500">Review.</span>
                 </h2>
-                <div className="border-b-4 border-orange-500 w-44 rounded mx-auto"></div>
+                <div className="border-b-4 border-white w-44 rounded mx-auto"></div>
             </div>
 
             {/* Form Card */}
-            <div className="group relative rounded-2xl bg-neutral-900/50 border border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-indigo-500/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] flex flex-col justify-between">
+            <div className="group relative rounded-2xl liquid-glass-card p-8 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] space-y-6">
                 {message && (
                     <div
-                        className={`mb-4 p-3 rounded text-sm ${
-                            message.type === "success"
-                                ? "bg-green-500/20 text-green-400"
-                                : "bg-red-500/20 text-red-400"
-                        }`}
+                        className={`mb-4 p-3 rounded text-sm ${message.type === "success"
+                            ? "bg-green-500/20 text-green-400"
+                            : "bg-red-500/20 text-red-400"
+                            }`}
                     >
                         {message.text}
                     </div>

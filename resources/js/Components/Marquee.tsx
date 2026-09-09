@@ -12,7 +12,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
     speed = 20 // Default 20 detik
 }) => {
     return (
-        <div className="overflow-hidden bg-black text-white py-6 space-y-4">
+        <div className="overflow-hidden text-white py-6 space-y-4">
             {/* Baris 1: Bergerak ke Kiri */}
             <div className="flex overflow-hidden whitespace-nowrap">
                 <div
