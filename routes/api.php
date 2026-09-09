@@ -13,9 +13,9 @@ export COMPOSER_ALLOW_SUPERUSER=1
 export PATH="/root/.nvm/versions/node/v20.20.2/bin:$PATH"
 export PUPPETEER_SKIP_DOWNLOAD=true
 
-APP_PATH="/www/wwwroot/beta.ryudevs.id"
+APP_PATH="/www/wwwroot/alfarizkistore.my.id"
 BRANCH="main"
-SITE="beta.ryudevs.id"
+SITE="alfarizkistore.my.id"
 DEPLOY_ENV="/www/wwwroot/env/.deploy_env"
 
 START_TIME=$(date +%s)
