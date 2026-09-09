@@ -32,8 +32,8 @@ function App() {
             <Portfolio />
             <Marquee />
             <Team />
-            <Contact />
             <Review />
+            <Contact />
             <Footer />
         </div>
     );

@@ -1,5 +1,3 @@
-// resources/js/Components/Review.tsx
-
 import React, { useEffect, useState } from 'react';
 
 // Interface untuk tipe data review, disesuaikan dengan response API
@@ -16,8 +14,17 @@ export default function Review(): React.ReactElement {
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/review`)
-            .then((res) => res.json())
+        // Fallback ke relative path atau IP lokal jika env belum diset
+        const baseUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api';
+
+        fetch(`${baseUrl}/review`)
+            .then((res) => {
+                // Cek status response HTTP sebelum parse JSON
+                if (!res.ok) {
+                    throw new Error(`Server error (${res.status}): ${res.statusText}`);
+                }
+                return res.json();
+            })
             .then((data: ReviewItem[]) => setReviews(data))
             .catch((err) => console.error('Gagal mengambil data review:', err))
             .finally(() => setLoading(false));
@@ -25,7 +32,7 @@ export default function Review(): React.ReactElement {
 
     if (loading) {
         return (
-            <section id="review" className="relative  p-10 text-white text-center my-10">
+            <section id="review" className="relative p-10 text-white text-center my-10">
                 <p className="text-neutral-400">Memuat review...</p>
             </section>
         );
@@ -33,7 +40,7 @@ export default function Review(): React.ReactElement {
 
     if (reviews.length === 0) {
         return (
-            <section id="review" className="relative  p-10 text-white text-center my-10">
+            <section id="review" className="relative p-10 text-white text-center my-10">
                 <p className="text-neutral-400">Belum ada review.</p>
             </section>
         );
@@ -43,7 +50,7 @@ export default function Review(): React.ReactElement {
     const marqueeItems = [...reviews, ...reviews];
 
     return (
-        <section id="review" className="relative  p-10 text-white text-center my-10">
+        <section id="review" className="relative p-10 text-white text-center my-10">
             {/* Custom Keyframes untuk Tailwind CSS via tag <style> standar TSX */}
             <style>{`
         @keyframes marqueeRight {
