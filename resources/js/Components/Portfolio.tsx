@@ -17,7 +17,8 @@ interface ApiResponse {
     data: PortfolioItem[];
 }
 
-const API_BASE_URL = 'http://localhost:8000';
+// DIPERBAIKI: Hapus 'http://localhost:8000' agar otomatis menyesuaikan dengan HTTPS domain aktif
+const API_BASE_URL = '';
 
 export function Portfolio() {
     const [projects, setProjects] = useState<PortfolioItem[]>([]);
@@ -84,8 +85,9 @@ export function Portfolio() {
                         >
                             {/* Image Container dengan Zoom Effect */}
                             <div className="relative aspect-video w-full overflow-hidden bg-neutral-800">
+                                {/* DIPERBAIKI: Hapus http://localhost:8000/ dari src gambar */}
                                 <img
-                                    src={`http://localhost:8000/storage/${project.thumbnail}`}
+                                    src={`/storage/${project.thumbnail}`}
                                     alt={project.title}
                                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                                 />
