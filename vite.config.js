@@ -8,7 +8,11 @@ export default defineConfig({
     plugins: [
         react(),
         laravel({
-            input: ['resources/css/app.css', 'resources/js/Components/App.tsx'],
+            input: [
+                'resources/css/app.css',
+                'resources/js/Components/App.tsx',
+                'resources/js/Components/Revieww.tsx' // <-- Tambahkan entry point ini
+            ],
             refresh: true,
             fonts: [
                 bunny('Orbitron', {

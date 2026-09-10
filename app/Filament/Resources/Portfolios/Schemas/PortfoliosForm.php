@@ -7,6 +7,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TagsInput;
 
 class PortfoliosForm
 {
@@ -18,9 +19,8 @@ class PortfoliosForm
                     ->required()
                     ->maxLength(255),
 
-                TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255),
+                TagsInput::make('slug')
+                    ->required(),
 
                 Textarea::make('description')
                     ->required()
